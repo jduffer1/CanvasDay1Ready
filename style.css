@@ -1,0 +1,176 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.header-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #0056b3; /* MISD Blue-ish */
+    text-align: center;
+}
+
+h2 {
+    color: #d9534f; /* MISD Red-ish */
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.note {
+    font-style: italic;
+    color: #555;
+    margin-left: 25px;
+    font-size: 0.9em;
+}
+
+.section-intro {
+    font-style: italic;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.sub-checklist {
+    list-style: none;
+    padding-left: 30px;
+}
+
+.sub-checklist li label {
+    font-weight: normal;
+    font-size: 0.95em;
+}
+
+.note-label input[type="checkbox"] {
+    display: none; /* Hide checkbox for non-actionable notes */
+}
+.note-label {
+    font-style: italic;
+    color: #555;
+    font-size: 0.9em;
+    margin-left: 0; /* Adjust if needed */
+}
+
+
+.hidden {
+    display: none;
+}
+
+.certificate {
+    border: 2px solid #0056b3;
+    padding: 20px;
+    margin-top: 30px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.certificate h2 {
+    color: #0056b3;
+}
+
+.certificate input[type="text"] {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.certificate button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 10px 5px;
+}
+
+.certificate button:hover {
+    background-color: #4cae4c;
+}
+
+#savePdfButton {
+    background-color: #f0ad4e;
+}
+#savePdfButton:hover {
+    background-color: #ec971f;
+}
+
+#googleSheetStatus {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.inline-icon {
+    height: 1em; /* Adjust size as needed */
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+/* Print-specific styles for PDF */
+@media print {
+    body {
+        font-size: 12pt;
+    }
+    .container {
+        box-shadow: none;
+        margin: 0;
+        max-width: 100%;
+    }
+    h1, h2, p, label {
+        color: #000 !important; /* Ensure text is black for printing */
+    }
+    #checklistForm, #savePdfButton, #submitToSheetButton, #googleSheetStatus, .header-image /* Hide elements not needed in PDF */ {
+        display: none !important;
+    }
+    .certificate {
+        border: 1px solid #000; /* Simple border for PDF */
+        display: block !important; /* Ensure certificate is visible */
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        page-break-inside: avoid;
+    }
+    .certificate input[type="text"] { /* Style inputs for printing their value */
+        border: none;
+        background-color: transparent;
+        font-weight: bold;
+        text-align: center;
+    }
+}
